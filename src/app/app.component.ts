@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ejemplo01';
+
+constructor(private router:Router){}
+
+Listar()
+{
+
+  this.router.navigate(["listar"]);
+}
+Nuevo()
+{
+
+  this.router.navigate(["add"]);
+}
+
+
+
+
+
 }
