@@ -17,4 +17,12 @@ export class ServiceService {
     return this.http.get<Persona[]>(this.url);
 
   }
+
+  createPersona(persona:Persona)
+  {
+    return this.http.post<Persona>(this.url,persona)
+    
+
+
+  }
 }
