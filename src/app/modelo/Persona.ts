@@ -1,8 +1,8 @@
 
 export class Persona
 {
-    id_usu: number;
-    name:string;
-    apellido:string;
+    id_usuario: number;
+   name:string;
+    apelido:string;
 
 }
