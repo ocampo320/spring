@@ -7,16 +7,19 @@
       <form action="" >
         <div class="form-group">
           <label for="">nombre:</label>
-          <input [(ngModel)]="per.name" name="name" type="text" class="form-control">
+          <input #name type="text" class="form-control">
         </div>
 
 
         <div class="form-group">
           <label for="">Apellidos:</label>
-          <input [(ngModel)]="per.apelido" name="apelido" type="text" class="form-control">
+          <input #apelido type="text" class="form-control">
         </div>
-        <button (click)="guardar()" class="btn btn-danger">Guardar</button>
+        <button (click)="guardar(name.value,apelido.value)" class="btn btn-danger">Guardar</button>
       </form>
     </div>
   </div>
 </div>
+
+
+

@@ -13,16 +13,21 @@ export class AgregarComponent implements OnInit {
 
 
   per:Persona=new Persona()
+  public usuarios = [];
+  public headElements = ["id", "name", "apelido"];
+  public usuarioIndice = null;
 
+  public nombreInput = "";
   constructor(private router:Router,private service:ServiceService ) { }
 
   ngOnInit() {
   }
 
-  guardar()
+  guardar(nombre:string,apellido:string)
   {
 
-    
+    this.per.name=nombre;
+    this.per.apelido=apellido;
 
       this.service.createPersona(this.per).subscribe(data=>{alert("se ingreso con exito");
       console.log("objeto per "+this.per)
@@ -31,6 +36,19 @@ export class AgregarComponent implements OnInit {
       this.router.navigate(["listar"])
       })
     
+    }
+
+
+    createUsuario(): void {
+      this.usuarioIndice = null;
+      const nuevoUsuario: any = {
+        nombre: this.nombreInput || ""
+      };
+      console.log("click createUsuario === ", { nuevoUsuario });
+      this.service.createUsuario(nuevoUsuario).subscribe(data => {
+        console.log({ data });
+        this.router.navigate(["listar"])
+      });
     }
 
 

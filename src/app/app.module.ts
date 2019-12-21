@@ -9,6 +9,7 @@ import { EditarComponent } from './Persona/editar/editar.component';
 import {FormsModule} from '@angular/forms'
 import {ServiceService} from '../app/Service/service.service';
 import {HttpClientModule} from '@angular/common/http'
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
  
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HttpClientModule} from '@angular/common/http'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot()
     
   ],
   providers: [ServiceService],

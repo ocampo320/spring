@@ -1,11 +1,64 @@
-<div class="container>" >
 
-<button (click)="Listar()" class="btn btn-info">Listar</button>
 
-<button  (click)="Nuevo()"class="btn btn-info" style="margin-left:10px"> Nuevo</button>
+    
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
 
-</div>
-
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" href="#">Principal</a></mdb-navbar-brand>
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a (click)="Nuevo()" class="nav-link waves-light" mdbWavesEffect  >Nuevo Usuario<span class="sr-only">(current)</span></a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>Nuevo Empresa</a>
+        </li>
+        <li class="nav-item">
+            <a  (click)="Listar()"  class="nav-link waves-light" mdbWavesEffect>Lista</a>
+          </li>
+        <!-- Dropdown -->
+    
+  
+      </ul>
+      <!-- Links -->
+  
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="twitter"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="google-plus"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <div class="btn-group" mdbDropdown>
+              <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+              <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->
 
 
 <router-outlet></router-outlet>
