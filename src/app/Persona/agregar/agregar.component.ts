@@ -13,11 +13,8 @@ export class AgregarComponent implements OnInit {
 
 
   per:Persona=new Persona()
-  public usuarios = [];
-  public headElements = ["id", "name", "apelido"];
-  public usuarioIndice = null;
+ 
 
-  public nombreInput = "";
   constructor(private router:Router,private service:ServiceService ) { }
 
   ngOnInit() {
@@ -37,19 +34,9 @@ export class AgregarComponent implements OnInit {
       })
     
     }
+   
 
-
-    createUsuario(): void {
-      this.usuarioIndice = null;
-      const nuevoUsuario: any = {
-        nombre: this.nombreInput || ""
-      };
-      console.log("click createUsuario === ", { nuevoUsuario });
-      this.service.createUsuario(nuevoUsuario).subscribe(data => {
-        console.log({ data });
-        this.router.navigate(["listar"])
-      });
-    }
+  
 
 
   }

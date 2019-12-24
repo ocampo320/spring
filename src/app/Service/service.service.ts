@@ -2,6 +2,7 @@ import { Injectable}from'@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Persona } from '../modelo/Persona';
 import { Observable } from "rxjs";
+import { stringify } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'
@@ -27,17 +28,19 @@ console.log("en servicio se recibe el objeto "+per)
     return this.http.post<Persona>(this.url,per);
   }
 
+//recibe de service, el id y concatena a la url
+getPersonaId(id:number) 
+{
+  console.log("recibe en service "+ id)
+return this.http.get<Persona>(this.url+"/"+id)
 
-  createUsuario(per: Persona):Observable<Persona> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })  
-    };
-    return this.http.post<Persona>(
-      this.url,
-      per,
-      httpOptions
-    );
 }
+
+//
+updatePersona(persona:Persona)
+{
+return this.http.put<Persona>(this.url+"/"+persona.id_usuario,Persona)
+
+}
+
 }

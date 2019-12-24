@@ -15,11 +15,12 @@
           </thead>
           <tbody>
             <tr *ngFor="let persona of personas" class="text-center">
-              <td>{{persona.id}}</td>
+              <td #id >{{persona.id}}</td>
               <td>{{persona.name}}</td>
               <td>{{persona.apelido}}</td>
               <td>
-                <button (click)="Editar(persona)" class="btn btn-warning">Editar</button>
+                <button (click)="consulta(persona.id)" class="btn btn-warning">Editar</button>
+            
                 <button (click)="Delete(persona)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
               </td>
             </tr>
