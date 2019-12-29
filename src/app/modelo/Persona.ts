@@ -3,7 +3,7 @@ export class Persona
 {
 
     
-     id_usuario: number;
+     id: number;
    name:string;
     apelido:string;
 

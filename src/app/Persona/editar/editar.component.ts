@@ -48,6 +48,23 @@ export class EditarComponent implements OnInit {
       this.persona=data;
     })
     console.log("en editar.ts 2 "+ id)
+  }
+
+
+
+  actuaizar(per:Persona)
+  {
+    console.log(per)
+    this.service.updatePersona(per)
+    
+    .subscribe(data=>{
+      this.persona=data
+      alert("se actualiza con exito")
+      this.router.navigate(["listar"])
+      console.log(per)
+   
+
+    })
 
   }
 }

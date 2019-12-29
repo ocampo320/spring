@@ -31,9 +31,9 @@ export class ListarComponent implements OnInit {
   
    
     
-    localStorage.setItem("id_usuario",persona.id_usuario.toString());
+    localStorage.setItem("id_usuario",persona.id.toString());
 
-    console.log('se presiono  el btn editar' + persona.id_usuario)
+    console.log('se presiono  el btn editar' + persona.id)
     this.router.navigate(["edit"]);
   }
 

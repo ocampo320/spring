@@ -37,10 +37,10 @@ return this.http.get<Persona>(this.url+"/"+id)
 }
 
 //
-updatePersona(persona:Persona)
+updatePersona(per:Persona)
 {
-return this.http.put<Persona>(this.url+"/"+persona.id_usuario,Persona)
-
+  console.log(per)
+return this.http.put<Persona>(this.url+"/"+per.id,per)
 }
 
 }
