@@ -7,6 +7,7 @@ import java.util.List;
 import com.example.ejemplo03.model.Usuario;
 import com.example.ejemplo03.services.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -31,4 +32,11 @@ public class controlador {
   public void deleteUser(@PathVariable int id){
     service.delete(id);
   }
+
+  @GetMapping("/{id}")
+  public Usuario getUserById(@PathVariable int id) {
+    return service.getUserById(id);
+
+  }
 }
+

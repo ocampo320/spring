@@ -3,7 +3,7 @@ package com.example.ejemplo03.services;
 import java.util.List;
 
 import com.example.ejemplo03.model.Usuario;
-import com.example.ejemplo03.repository.personaRepositorio;
+import com.example.ejemplo03.repository.PersonaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class PersonaService {
 
 @Autowired
-private personaRepositorio repositorio;
+private PersonaRepositorio repositorio;
 
 
   public List<Usuario> getUsers( ) {
@@ -41,6 +41,9 @@ public Usuario edit(Usuario p) {
 public void delete(int id) {
 	  repositorio.deleteById(id);
 }
+  public Usuario getUserById(int id) {
+    return repositorio.findById(id).orElse(null);
+  }
 
 
 

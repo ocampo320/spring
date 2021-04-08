@@ -4,6 +4,7 @@ import com.example.ejemplo03.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
-public interface personaRepositorio extends JpaRepository<Usuario, Integer> {
+import java.util.Optional;
 
+public interface PersonaRepositorio extends JpaRepository<Usuario, Integer> {
 }
