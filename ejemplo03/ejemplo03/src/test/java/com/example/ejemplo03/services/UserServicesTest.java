@@ -99,7 +99,6 @@ public class UserServicesTest {
 
   }
 
-
   @Test
   void shouldBeDelete() {
     final int userId=1;
@@ -108,5 +107,24 @@ public class UserServicesTest {
     personaService.delete(userId);
 
     verify(personaRepositorio, times(2)).deleteById(userId);
+  }
+
+  @Test
+  void updateUser() {
+    final Usuario user =new Usuario(
+      3,
+      "deivi",
+      "lopez",
+      "deivi320@hotmail.com",
+      "2220718",
+      "la sierra");
+
+    given(personaRepositorio.save(user)).willReturn(user);
+
+    final Usuario expected = personaService.edit(user);
+
+    assertThat(expected).isNotNull();
+
+    verify(personaRepositorio).save(any(Usuario.class));
   }
 }

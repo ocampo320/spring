@@ -19,25 +19,14 @@ private PersonaRepositorio repositorio;
     return repositorio.findAll();
   }
 
-
-
-
 public Usuario add(Usuario p) {
 	return repositorio.save(p);
 
 }
 
-
-public Usuario edit(Usuario p) {
-  Usuario existingUser = repositorio.findById(p.getIdUsuario()).orElse(null);
-  existingUser.setNombeUsuario(p.getNombeUsuario());
-  existingUser.setApellidoUsuario(p.getApellidoUsuario());
-  existingUser.setDireccionUsuario(p.getDireccionUsuario());
-  existingUser.setEmailUsuario(p.getEmailUsuario());
-  return repositorio.save(existingUser);
-}
-
-
+  public Usuario edit(Usuario user) {
+    return repositorio.save(user);
+  }
 public void delete(int id) {
 	  repositorio.deleteById(id);
 }
