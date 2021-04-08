@@ -2,14 +2,14 @@ package com.example.ejemplo03.model;
 
 import javax.persistence.*;
 
+import com.example.ejemplo03.utils.Const;
 import lombok.*;
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="USUARIO")
+@Table()
 
 public class Usuario {
 
