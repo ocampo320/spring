@@ -1,16 +1,9 @@
 package com.example.ejemplo03.repository;
 
-import java.util.List;
-
 import com.example.ejemplo03.model.Usuario;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface personaRepositorio extends Repository<Usuario, Integer>{
-	List<Usuario>findAll();
-    Usuario findById(int id);
-    Usuario save(Usuario p);
-    void delete(Usuario p);
-
-
+public interface personaRepositorio extends JpaRepository<Usuario, Integer> {
 
 }

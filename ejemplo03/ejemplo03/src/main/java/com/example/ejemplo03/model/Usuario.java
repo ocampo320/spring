@@ -29,8 +29,6 @@ public class Usuario {
   @Column()
   private String emailUsuario;
 
-
-
   @Column()
   private String telefonoUsuario;
 
